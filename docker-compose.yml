@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/fmstpw/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=fmstpw
+      - POSTGRES_PASSWORD=fmstpw
+      - POSTGRES_DB=fmstpw
+  redis:
+    restart: on-failure
+    image: redis:6.0.10
+    ports:
+      - 6379:6379
+
+volumes:
+  postgres_data:
