@@ -1,0 +1,2 @@
+backend/src/db.sqlite3
+backend/src/poetry.lock
